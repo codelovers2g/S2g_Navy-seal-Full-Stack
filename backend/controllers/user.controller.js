@@ -1,0 +1,11 @@
+import express from "express";
+import UserSErvice from "../services/user.service.js";
+const {createUser,getAllUsers,getUserById,updateUserById,checkUser,deleteUser}=UserSErvice;
+const app=express.Router();
+app.get("/all",getAllUsers);
+app.post("/",createUser);
+app.get("/:id",getUserById);
+app.put("/:id",updateUserById);
+app.get("/checkUser/:id",checkUser);
+app.delete("/:id",deleteUser);
+export default app;
